@@ -1,17 +1,33 @@
-﻿// Welcome Message
-Console.WriteLine("Welcome to the ToyRobot Challenge");
+﻿using ToyRobotTest;
 
-// Run selection menu
-MainMenu menu = new MainMenu();
-menu.SelectMode();
+class Program
+{
+    static void Main(string[] args)
+    {
+        bool appRunning = true;
+        Robot robot = new Robot();
+        Simulator simulator = new Simulator(robot);
 
-// Execute mode from menu selection
-if (menu._mode == 0)
-{
-    InteractiveMode mode = new InteractiveMode();
-    mode.PrintInteractiveTitle();
-}
-else
-{
-    Console.WriteLine("Run Test Mode");
+        Helpers helpers = new Helpers();
+        helpers.WelcomeMessage();
+        helpers.CommandMessage();
+
+        // Running task
+        while (appRunning)
+        {
+            // Read user input
+            string input = Console.ReadLine();
+            
+            // Quit
+            if (input == "QUIT")
+            {
+                break;
+            }
+
+            // Execute simulator
+
+            simulator.Execute(input);
+
+        }
+    }
 }

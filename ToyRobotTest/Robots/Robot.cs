@@ -5,10 +5,10 @@ public class Robot : IRobot
     // Robot coordinates
     public int _X { get; set; }
     public int _Y { get; set; }
-    public Direction _direction {  get; set; }
+
     bool isPlaced = false;
 
-    public void Place(int x, int y, Direction direction)
+    public void Place(int x, int y)
     {
         throw new NotImplementedException();
     }
@@ -32,7 +32,7 @@ public class Robot : IRobot
     {
         if(isPlaced)
         {
-            Console.WriteLine($"({_X}),({_Y}),{_direction}");
+            Console.WriteLine($"({_X}),({_Y}),");
         }
     }
 }

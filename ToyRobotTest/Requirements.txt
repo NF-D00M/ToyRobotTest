@@ -1,0 +1,52 @@
+# Menu
+
+## Main Menu
+-- I want an interactive menu, so that a user can select commands.
+-- Commands:
+---- PLACE X,Y,F.
+---- MOVE.
+---- LEFT.
+---- RIGHT.
+---- REPORT.
+---- QUIT.
+
+# Commands
+
+## PLACE X,Y,F 
+-- I want to place a robot in position, so that the robot is on the table.
+-- Positions:
+---- X (row), index range: 0-4.
+---- Y (column), index range: 0-4.
+---- F (direction), NORTH (0), EAST (1), SOUTH (2), WEST (3).
+-- A robot not placed on table igores all commands except PLACE.
+
+## MOVE
+-- I want to move the robot, so that it's position can change on the table.
+-- Move the robot one position forward in the direction it is facing.
+---- If the robot is facing NORTH, Y + 1. 
+---- If the robot is facing SOUTH, Y - 1. 
+---- If the robot is facing EAST, X + 1. 
+---- If the robot is facing WEST, X - 1. 
+---- If the MOVE command forces the robot to
+
+## LEFT
+-- I want to move the robot LEFT, so that it's direction rotates 90 degrees anti-clockwise
+-- Access current directions index, and peform modulo arithmetic
+---- directionIndex + 1 mod 4
+
+## RIGHT
+-- I want to move the robot RIGHT, so that it's direction rotates 90 degrees clockwise
+-- Access current directions index, and peform modulo arithmetic
+---- directionIndex - 1 mod 4
+
+## REPORT
+-- I want to report on the robots position on the table, so that the user is aware of the robots co-ordinates and facing direction
+---- e.g. "Robot is at position (X),(Y),(Direction)"
+
+## QUIT
+-- I want to quit the application, to stop the running instance
+---- When a user selects QUIT the application is stopped.
+
+
+
+
