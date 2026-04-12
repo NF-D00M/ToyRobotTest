@@ -1,6 +1,7 @@
 public class Robot : IRobot
 {
-    private bool isPlaced = false;
+    private bool _isPlaced = false;
+    private int _tableDimensions = 0;
     private int _x { get; set; }
     private int _y { get; set; }
     private string _direction = string.Empty;
@@ -13,13 +14,18 @@ public class Robot : IRobot
         { "WEST",  3 }
     };
 
+    public Robot(int tableDimensions)
+    {
+        _tableDimensions = tableDimensions;
+    }
+
     public void Place(int x, int y, string direction)
     {
         // Place co-ordinates
         _x = x;
         _y = y;
         _direction = direction;
-        isPlaced = true;
+        _isPlaced = true;
     }
 
     public void HandlePlacePosition(string placePosition)
@@ -80,7 +86,7 @@ public class Robot : IRobot
 
     public void Left()
     {
-        if (isPlaced)
+        if (_isPlaced)
         {
             // Get direction index
             string key = _direction;
@@ -94,7 +100,7 @@ public class Robot : IRobot
 
     public void Right()
     {
-        if (isPlaced)
+        if (_isPlaced)
         {
             // Get direction index
             string key = _direction;
@@ -108,7 +114,7 @@ public class Robot : IRobot
 
     public String Report()
     {
-        if(isPlaced)
+        if(_isPlaced)
         {
             string report = $"{_x},{_y},{_direction}";
 
@@ -120,7 +126,7 @@ public class Robot : IRobot
 
     public bool IsWithinBounds(int x, int y)
     {
-        if (x is >= 0 and < 5 && y is >= 0 and < 5)
+        if (x >= 0 && x < _tableDimensions && y >= 0 && y < _tableDimensions)
         {
             return true;
         }

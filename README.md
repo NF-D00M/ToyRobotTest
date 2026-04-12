@@ -66,7 +66,7 @@ Please refer to `Requirements.txt` for a list of the applications technical impl
 
 ## Rotating Position Left & Right
 
-* The modulo equation is the most scalable and flexible solution, as it avoid chainging if else statements. If the border of a position expands from 4 to 5, then the equations paramaters just needs to adjust match the number oreientations.  
+* The modulo equation is the most scalable and flexible solution, as it avoid chaining if else statements. If the number of keys in the map increase/decrease, then the number of rotations required to create a full rotation adjusts along with the size.
 
 # Future Enhancements
 

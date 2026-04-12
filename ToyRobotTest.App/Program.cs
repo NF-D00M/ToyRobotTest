@@ -4,10 +4,15 @@ class Program
 {
     static void Main(string[] args)
     {
+        // App is running
         bool appRunning = true;
-        Robot robot = new Robot();
+
+        // Instantiate Robot with 5 x 5 table dimensions and simulator
+        int tableDimensions = 5;
+        Robot robot = new Robot(tableDimensions);
         Simulator simulator = new Simulator(robot);
 
+        // Welcome message
         Helpers helpers = new Helpers();
         helpers.WelcomeMessage();
         helpers.CommandMessage();

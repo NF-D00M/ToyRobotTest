@@ -9,7 +9,7 @@ public class SimulatorTests
     {
         //  Arrange
         // Instantiate objects and set expectedReport
-        Robot robot = new Robot();
+        Robot robot = new Robot(5);
         Simulator simulator = new Simulator(robot);
 
         string filePath = "TestFiles/Example1.txt";
@@ -31,7 +31,7 @@ public class SimulatorTests
     {
         //  Arrange
         // Instantiate objects, set file path and expectedReport string
-        Robot robot = new Robot();
+        Robot robot = new Robot(5);
         Simulator simulator = new Simulator(robot);
 
         string filePath = "TestFiles/Example2.txt";
