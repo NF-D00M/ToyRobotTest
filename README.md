@@ -12,7 +12,7 @@ The purpose of this console application is to test the actions of a virtual toy 
 1. `git clone https://github.com/NF-D00M/ToyRobotTest.git`
 2. dotnet restore
 3. dotnet build
-3. cd toyrobottest
+3. cd toyrobottest.App
 4. dotnet run
 
 ## Toy Robot Controls
