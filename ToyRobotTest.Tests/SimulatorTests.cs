@@ -5,6 +5,28 @@ namespace ToyRobotTest.Tests;
 public class SimulatorTests
 {
     [Fact]
+    public void SimulatorCommandsTest()
+    {
+        //  Arrange
+        // Instantiate objects and set expectedReport
+        Robot robot = new Robot(5);
+        Simulator simulator = new Simulator(robot);
+
+        string filePath = "TestFiles/Commands.txt";
+        string expectedReport = "3,0,SOUTH";
+
+        // Act
+        // Read file line by line
+        ReadFile(filePath, simulator);
+
+        // Set actual report string
+        string actualReport = robot.Report();
+
+        // Assert
+        Assert.Equal(expectedReport, actualReport);
+    }
+
+    [Fact]
     public void SimulatorExample1Test()
     {
         //  Arrange
