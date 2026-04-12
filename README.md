@@ -23,9 +23,9 @@ This console application requests a user to enter the below controls, moving a r
 
 * The robot cannot be placed on the table if:
   * The co-ordinates exceed the boundary range 0-4.
-  * The directions dont exist. The user can only input NORTH, EAST, SOUTH WEST.
-* The robot can only process these commands once places on the table. MOVE, LEFT, RIGHT, REPORT.
-* The robot can only move if the next move does not exceed the boundary range 0-4.
+  * The directions dont exist. The user can only input NORTH, EAST, SOUTH, WEST.
+* The robot can only process these commands once placed on the table. MOVE, LEFT, RIGHT, REPORT.
+* The robot can only move a position if the next move position does not exceed the boundary range 0-4.
 
 ### Controls
 
@@ -60,6 +60,13 @@ Please refer to `Requirements.txt` for a list of the applications technical impl
 
 # Key Technical Implementation
 
+## Boundary Check - Contast Time Efficiency 
 
+* The time efficiency of verifying if co-ordinate x and y are within the bounds of the tables dimensions are in O(1), constant time. Checking the bounds of x,y always takes the same amount of time no matter the size of the grid due to one operation of inequalities. 
+
+## Rotating Position Left & Right
+
+* The modulo equation is the most scalable and flexible solution, as it avoid chainging if else statements. If the border of a position expands from 4 to 5, then the equations paramaters just needs to adjust match the number oreientations.  
 
 # Future Enhancements
+

@@ -16,7 +16,7 @@ class Program
         while (appRunning)
         {
             // Read user input
-            string input = Console.ReadLine();
+            string? input = Console.ReadLine();
             
             // Quit
             if (input == "QUIT")
@@ -25,7 +25,7 @@ class Program
             }
 
             // Execute simulator
-            simulator.Execute(input);
+            simulator.Execute(input ?? string.Empty);
         }
     }
 }

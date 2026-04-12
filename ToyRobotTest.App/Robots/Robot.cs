@@ -1,12 +1,10 @@
 public class Robot : IRobot
 {
-    bool isPlaced = false;
-    public int _x { get; set; }
-    public int _y { get; set; }
-    public string _direction { get; set; }
-    public bool _validDirection = false;
-    public bool _inBoundary = false;
-    public bool _canMove = false;
+    private bool isPlaced = false;
+    private int _x { get; set; }
+    private int _y { get; set; }
+    private string _direction = string.Empty;
+
     private static readonly Dictionary<string, int> _map = new Dictionary<string, int>
     {
         { "NORTH", 0 },
@@ -32,17 +30,10 @@ public class Robot : IRobot
         string direction = positions[2];
 
         // Validation rules
-        ValidateBoundary(x, y);
-        ValidateDirectionString(direction);
-
-        if (positions?.Length == 3 && _inBoundary && _validDirection)
+        if (IsWithinBounds(x, y) && IsValidDirection(direction))
         {
             Place(x, y, direction);
         }
-
-        // Reset boundary and direction to false
-        _inBoundary = false;
-        _validDirection = false;
     }
 
     public void Move()
@@ -72,14 +63,9 @@ public class Robot : IRobot
         }
 
         // Set _x if in boundary
-        if (ValidateDirectionIndex(newX))
+        if (IsWithinBounds(newX, newY))
         {
             _x = newX;
-        }
-
-        // Set _y if in boundary
-        if (ValidateDirectionIndex(newY))
-        {
             _y = newY;
         }
     }
@@ -117,42 +103,26 @@ public class Robot : IRobot
         if(isPlaced)
         {
             string report = $"{_x},{_y},{_direction}";
-            Console.WriteLine(report);
 
             return report;
         }
 
-        return null;
+        return string.Empty;
     }
 
-    public void ValidateBoundary(int x, int y)
+    public bool IsWithinBounds(int x, int y)
     {
-        // Validate boundaries
-        if ((x >= 0 && x < 5) && (y >= 0 && y < 5))
+        if (x is >= 0 and < 5 && y is >= 0 and < 5)
         {
-            _inBoundary = true;
+            return true;
         }
-        else
-        {
-            _inBoundary = false;
-        }
+
+        return false;
     }
 
-    public void ValidateDirectionString(string direction)
+    public bool IsValidDirection(string direction)
     {
-        if (!string.IsNullOrWhiteSpace(direction) && _map.ContainsKey(direction))
-        {
-            _validDirection = true;
-        }
-        else 
-        {
-            _validDirection = false;
-        }
-    }
-
-    public bool ValidateDirectionIndex(int index)
-    {
-        if (index >= 0 && index < 5)
+        if (!string.IsNullOrWhiteSpace(direction) && _map.ContainsKey(direction.ToUpper()))
         {
             return true;
         }

@@ -40,7 +40,7 @@
                     break;
 
                 case "REPORT":
-                    _robot.Report();
+                    Console.WriteLine(_robot.Report());
                     break;
 
                 default:
