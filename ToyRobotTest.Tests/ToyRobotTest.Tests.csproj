@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ToyRobotTest.App\ToyRobotTest.App.csproj" />
     <ProjectReference Include="..\ToyRobotTest\ToyRobotTest.App.csproj" />
   </ItemGroup>
 

@@ -1,4 +1,6 @@
-﻿namespace ToyRobotTest.Tests;
+﻿using ToyRobotTest.App;
+
+namespace ToyRobotTest.Tests;
 
 public class SimulatorTests
 {
