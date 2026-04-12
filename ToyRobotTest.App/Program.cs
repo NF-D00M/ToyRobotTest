@@ -17,7 +17,13 @@ class Program
         {
             // Read user input
             string? input = Console.ReadLine();
-            
+
+            // Ignore null and whitespace
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                continue;
+            }
+
             // Quit
             if (input == "QUIT")
             {

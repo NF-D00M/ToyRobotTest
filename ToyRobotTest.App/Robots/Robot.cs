@@ -25,6 +25,14 @@ public class Robot : IRobot
     public void HandlePlacePosition(string placePosition)
     {
         string[] positions = placePosition.Split(',');
+
+        // Ignore malformed positions
+        if (positions.Length != 3)
+        {
+            return;
+        }
+
+        // Parse positions
         int x = int.Parse(positions[0]);
         int y = int.Parse(positions[1]);
         string direction = positions[2];
