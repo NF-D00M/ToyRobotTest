@@ -1,4 +1,4 @@
-﻿using ToyRobotTest;
+﻿using ToyRobotTest.App;
 
 class Program
 {

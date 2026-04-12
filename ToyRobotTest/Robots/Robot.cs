@@ -1,5 +1,3 @@
-using System;
-
 public class Robot : IRobot
 {
     bool isPlaced = false;
@@ -120,6 +118,7 @@ public class Robot : IRobot
         {
             string report = $"{_x},{_y},{_direction}";
             Console.WriteLine(report);
+
             return report;
         }
 

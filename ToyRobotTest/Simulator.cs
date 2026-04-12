@@ -1,4 +1,4 @@
-﻿namespace ToyRobotTest
+﻿namespace ToyRobotTest.App
 {
     public class Simulator
     {
