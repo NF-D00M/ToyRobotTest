@@ -25,9 +25,7 @@ class Program
             }
 
             // Execute simulator
-
             simulator.Execute(input);
-
         }
     }
 }

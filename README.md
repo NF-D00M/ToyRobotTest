@@ -1,4 +1,5 @@
 # ToyRobotTest
+
 The purpose of this console application is to test the actions of a virtual toy robot.
 
 # Dependencies
@@ -11,12 +12,12 @@ The purpose of this console application is to test the actions of a virtual toy 
 
 # Requirements
 
-Please refer to `Requirements.txt` for a list of the applications technical implementation and business rules
+Please refer to `Requirements.txt` for a list of the applications technical implementation and business rules.
 
 * [x] Main Menu/Simualtor
-* [ ] Commands
+* [x] Commands
 * [ ] Tests
 
-# Technical Implementation
+# Key Technical Implementation
 
 # Future Enhancements
