@@ -114,12 +114,16 @@ public class Robot : IRobot
         }
     }
 
-    public void Report()
+    public String Report()
     {
         if(isPlaced)
         {
-            Console.WriteLine($"The Robot's Position is: ({_x}),({_y}),{_direction}");
+            string report = $"{_x},{_y},{_direction}";
+            Console.WriteLine(report);
+            return report;
         }
+
+        return null;
     }
 
     public void ValidateBoundary(int x, int y)

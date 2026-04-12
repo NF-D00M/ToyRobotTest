@@ -16,7 +16,7 @@ Please refer to `Requirements.txt` for a list of the applications technical impl
 
 * [x] Main Menu/Simualtor
 * [x] Commands
-* [ ] Tests
+* [x] Tests
 
 # Key Technical Implementation
 

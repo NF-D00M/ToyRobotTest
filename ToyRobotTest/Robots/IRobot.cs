@@ -4,5 +4,5 @@ public interface IRobot
     public void Move();
     public void Left();
     public void Right();
-    public void Report();
+    public string Report();
 }
