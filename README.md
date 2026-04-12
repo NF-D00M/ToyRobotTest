@@ -10,10 +10,10 @@ The purpose of this console application is to test the actions of a virtual toy 
 # Running the Program
 
 1. `git clone https://github.com/NF-D00M/ToyRobotTest.git`
-2. dotnet restore
-3. dotnet build
-3. cd toyrobottest.App
-4. dotnet run
+2. `dotnet restore`
+3. `dotnet build`
+3. `cd ToyRobotTest.App`
+4. `dotnet run`
 
 ## Toy Robot Controls
 
@@ -37,7 +37,18 @@ This console application requests a user to enter the below controls, moving a r
 
 ## Toy Robot Example
 
+1. `PLACE 1,1,NORTH`
+2. `MOVE`
+3. `MOVE`
+4. `RIGHT`
+4. `REPORT` { Expected Output: 1,3,EAST }
+
 # Tests
+
+1. `cd ToyRobotTest.Tests`
+2. `dotnet restore`
+3. `dotnet test`
+
 
 # Requirements
 
@@ -48,5 +59,7 @@ Please refer to `Requirements.txt` for a list of the applications technical impl
 * [x] Tests
 
 # Key Technical Implementation
+
+
 
 # Future Enhancements
