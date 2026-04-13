@@ -9,7 +9,7 @@ class Program
 
         // Instantiate Robot with 5 x 5 table dimensions and simulator
         int tableDimensions = 5;
-        Robot robot = new Robot(tableDimensions);
+        IRobot robot = new Robot(tableDimensions);
         Simulator simulator = new Simulator(robot);
 
         // Welcome message
