@@ -30,7 +30,7 @@ class Program
             }
 
             // Quit
-            if (input == "QUIT")
+            if (input?.Trim().ToUpper() == "QUIT")
             {
                 break;
             }

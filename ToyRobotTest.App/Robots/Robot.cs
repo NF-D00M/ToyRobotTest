@@ -38,10 +38,14 @@ public class Robot : IRobot
             return;
         }
 
-        // Parse positions
-        int x = int.Parse(positions[0]);
-        int y = int.Parse(positions[1]);
-        string direction = positions[2];
+        // Parse positions, ignore if malformed
+        if (int.TryParse(positions[0], out int x) is false ||
+            int.TryParse(positions[1], out int y) is false)
+        {
+            return;
+        }
+
+        string direction = positions[2].Trim().ToUpper();
 
         // Validation rules
         if (IsWithinBounds(x, y) && IsValidDirection(direction))

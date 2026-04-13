@@ -2,16 +2,25 @@
 {
     public class Simulator
     {
-        private readonly Robot _robot;
+        private readonly IRobot _robot;
         Helpers helpers = new Helpers();
 
-        public Simulator(Robot robot) 
+        public Simulator(IRobot robot) 
         { 
             _robot = robot;
         }
 
         public void Execute(string input)
-        { 
+        {
+            // Handle nulls and whitespace
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                return;
+            }
+
+            // Handle leading and trailing white space and lowercase
+            input = input.Trim().ToUpper();
+
             // Split string to extract command and positions
             string[] splitInput = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
             string command = splitInput[0];

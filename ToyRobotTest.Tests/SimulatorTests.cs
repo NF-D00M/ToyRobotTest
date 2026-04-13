@@ -70,6 +70,50 @@ public class SimulatorTests
         Assert.Equal(expectedReport, actualReport);
     }
 
+    [Fact]
+    public void SimulatorHandleNullsTest()
+    {
+        //  Arrange
+        // Instantiate objects, set file path and expectedReport string
+        Robot robot = new Robot(5);
+        Simulator simulator = new Simulator(robot);
+
+        string filePath = "TestFiles/Nulls.txt";
+        string expectedReport = "1,2,NORTH";
+
+        // Act
+        // Read file line by line
+        ReadFile(filePath, simulator);
+
+        // Set actual report string
+        string actualReport = robot.Report();
+
+        // Assert
+        Assert.Equal(expectedReport, actualReport);
+    }
+
+    [Fact]
+    public void SimulatorIgnoreTableEdgeTest()
+    {
+        //  Arrange
+        // Instantiate objects, set file path and expectedReport string
+        Robot robot = new Robot(5);
+        Simulator simulator = new Simulator(robot);
+
+        string filePath = "TestFiles/TableEdge.txt";
+        string expectedReport = "0,0,WEST";
+
+        // Act
+        // Read file line by line
+        ReadFile(filePath, simulator);
+
+        // Set actual report string
+        string actualReport = robot.Report();
+
+        // Assert
+        Assert.Equal(expectedReport, actualReport);
+    }
+
     public void ReadFile(String filePath, Simulator simulator)
     {
         foreach (string line in File.ReadLines(filePath))
