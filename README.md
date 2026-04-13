@@ -12,11 +12,13 @@ The purpose of this console application is to test the actions of a virtual toy 
 
 # Running the Program
 
+To run the application clone the repository, change directory to ToyRobotTest.App, and build the binaries.
+
 1. `git clone https://github.com/NF-D00M/ToyRobotTest.git`
-2. `dotnet restore`
-3. `dotnet build`
-3. `cd ToyRobotTest.App`
-4. `dotnet run`
+1. `cd ToyRobotTest.App`
+3. `dotnet restore`
+4. `dotnet build`
+5. `dotnet run`
 
 ## Toy Robot Controls
 
@@ -48,10 +50,11 @@ This console application requests a user to enter the below controls, moving a r
 
 # Tests
 
+To run the tests, change directory to ToyRobotTest.Tests, and build the binaries.
+
 1. `cd ToyRobotTest.Tests`
 2. `dotnet restore`
 3. `dotnet test`
-
 
 # Requirements
 
