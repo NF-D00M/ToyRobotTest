@@ -56,6 +56,11 @@ public class Robot : IRobot
 
     public void Move()
     {
+        if (!_isPlaced)
+        {
+            return;
+        }
+
         // Set new index 
         int newX = _x;
         int newY = _y;
